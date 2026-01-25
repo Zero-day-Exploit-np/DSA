@@ -33,9 +33,11 @@ int isEmpty(struct Node *ptr)
     return 0;
 }
 
-int isFull(struct Node * ptr){
-    struct Node * n=(struct Node*)malloc(sizeof(struct Node));
-    if(n < NULL){
+int isFull(struct Node *ptr)
+{
+    struct Node *n = (struct Node *)malloc(sizeof(struct Node));
+    if (n == NULL)
+    {
         return 1;
     }
     return 0;
