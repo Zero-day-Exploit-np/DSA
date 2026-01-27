@@ -55,46 +55,6 @@ struct Node *push(struct Node *ptr, char data)
     return a;
 }
 
-int peak(struct Node *ptr, int position)
-{
-    if (isEmpty(ptr))
-    {
-        printf("stack is empty cannot peak the element.\n");
-        return 0;
-    }
-    for (int i = 1; i < position && ptr != NULL; i++)
-    {
-        ptr = ptr->next;
-
-        if (ptr == NULL)
-        {
-            printf("Invalid position\n");
-            return 0;
-        }
-    }
-    return ptr->data;
-}
-
-void print(struct Node *ptr)
-{
-    while (ptr != NULL)
-    {
-        printf(" %c ", ptr->data);
-        ptr = ptr->next;
-    }
-    printf("\n");
-}
-
-int checkexp(struct Node *ptr)
-{
-    if (isEmpty(ptr))
-    {
-        printf("balance expressions.\n");
-        return 0;
-    }
-    printf("unbalance expressions.\n");
-    return 0;
-}
 
 int ismatching(char open, char close)
 {
@@ -111,7 +71,7 @@ int main()
 {
     struct Node *head = NULL;
 
-    char s[] = "[1+2{2-1(5*2)}]";
+    char s[] = "{[]}";
 
     for (int i = 0; s[i] != '\0'; i++)
     {
@@ -149,3 +109,5 @@ int main()
 
     return 0;
 }
+
+
