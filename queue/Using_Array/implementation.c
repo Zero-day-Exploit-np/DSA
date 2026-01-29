@@ -68,6 +68,7 @@ int main()
 
     printf("\nDequeued: %d\n", dequeue(a));
     printf("Dequeued: %d\n", dequeue(a));
+    printf("Dequeued: %d\n", dequeue(a));
 
     print(a);
 
