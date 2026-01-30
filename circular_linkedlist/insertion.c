@@ -37,15 +37,13 @@ struct Node *insertNodeInFirst(struct Node *head, int data)
 struct Node * insertNodeEnd(struct Node * head, int data){
     struct Node * ptr= head;
     struct Node * a = (struct Node*)malloc(sizeof(struct Node));
-    struct Node * prev=head;
     a->data=data;
     
     ptr=ptr->next;
-    while(ptr!=head){
-        prev=prev->next;
+    while(ptr->next!=head){
         ptr=ptr->next;
     }
-    prev->next=a;
+    ptr->next=a;
     a->next=head;
     return head;
 }
@@ -111,6 +109,8 @@ int main()
     printf(" \n");
 
     head = insertNodeEnd(head, 5);
+    head = insertNodeEnd(head, 7);
+
     display(head);
     printf(" \n");
 
