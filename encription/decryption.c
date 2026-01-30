@@ -1,9 +1,30 @@
-#include<stdio.h>
-int main(){
-    char arr[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    // char arr[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','\0'};
+#include <stdio.h>
+#include <ctype.h>
+#include<string.h>
 
-    printf("%s",arr);
+int main()
+{
+    char plaintext[100], key[100];
+    int i, j = 0;
+
+    printf("Enter plaintext: ");
+    scanf("%s", plaintext);
+
+    printf("Enter key: ");
+    scanf("%s", key);
+
+    for (i = 0; plaintext[i] != '\0'; i++)
+    {
+        if (isalpha(plaintext[i]))
+        {
+            char p = toupper(plaintext[i]) - 'A';
+            char k = toupper(key[j % strlen(key)]) - 'A';
+            char cipher = (p + k) % 26 + 'A';
+
+            printf("%c", cipher);
+            j++;
+        }
+    }
 
     return 0;
 }
