@@ -1,4 +1,3 @@
-// 3️⃣ Count vowels and consonants
 #include<stdio.h>
 int main(){
     char str1[]="Hello this is string";

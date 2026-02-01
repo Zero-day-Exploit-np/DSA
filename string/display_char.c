@@ -1,4 +1,3 @@
-// 2️⃣ Print string character by character
 #include<stdio.h>
 int main(){
 char str1[]="hello world";
