@@ -1,6 +1,3 @@
-// Check if array is sorted
-// Problem:
-// Return true if array is sorted in non-decreasing order.
 
 #include<stdio.h>
 void check(int array[], int size){

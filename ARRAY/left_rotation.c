@@ -1,4 +1,3 @@
-// Left rotate array by 1
 #include <stdio.h>
 void rotation(int array[], int size)
 {

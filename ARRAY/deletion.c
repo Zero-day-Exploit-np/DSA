@@ -1,4 +1,3 @@
-// Delete element at index k.
 #include<stdio.h>
 void delete(int array[], int size, int index){
 for(int i=index; i<size-1; i++){

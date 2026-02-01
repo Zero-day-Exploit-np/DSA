@@ -1,4 +1,3 @@
-// time complexity =O(N)
 #include<stdio.h>
 void minmax(int array[], int size){
     int min, max;

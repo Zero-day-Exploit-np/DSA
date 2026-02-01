@@ -1,6 +1,4 @@
-// 1️⃣4️⃣ Remove duplicates from sorted array
-// Problem:
-// Return new length after removing duplicates.
+
 #include <stdio.h>
 #include <limits.h>
 void removeduplicate(int arr[], int size)
