@@ -4,25 +4,38 @@ struct Node
 {
     int data;
     struct Node *left;
-    struct Node *Right;
+    struct Node *right;
 };
+
 struct Node *createNode(int data)
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     ptr->data = data;
     ptr->left = NULL;
-    ptr->Right = NULL;
+    ptr->right = NULL;
     return ptr;
 }
-void preorder(struct Node *ptr)
+
+// Tree
+//     17
+//     / \
+//   15   20
+//  / \    \
+// 10  16    43
+// preOrder = 17 15 20 10 16 43
+// postOder = 10 16 15 43 20 17
+// inOrder =  10 15 16 17 20 43
+
+void inOrder(struct Node *ptr)
 {
     if (ptr != NULL)
     {
+        inOrder(ptr->left);
         printf(" %d", ptr->data);
-        preorder(ptr->left);
-        preorder(ptr->Right);
+        inOrder(ptr->right);
     }
 }
+
 int main()
 {
     struct Node *a = createNode(17);
@@ -42,15 +55,13 @@ int main()
     // postOder = 10 16 15 43 20 17
 
     a->left = b;
-    a->Right = c;
+    a->right = c;
 
     b->left = d;
-    b->Right = e;
+    b->right = e;
 
     c->left = NULL;
-    c->Right = f;
-
-    preorder(a);
-
+    c->right = f;
+    inOrder(a);
     return 0;
 }
