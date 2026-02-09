@@ -24,6 +24,46 @@ int inorder(struct Node *ptr)
         inorder(ptr->Right);
     }
 }
+void PostOrder(struct Node *ptr)
+{
+    if (ptr != NULL)
+    {
+        PostOrder(ptr->Left);
+        PostOrder(ptr->Right);
+        printf(" %d", ptr->data);
+    }
+}
+void preorder(struct Node *ptr)
+{
+    if (ptr != NULL)
+    {
+        printf(" %d", ptr->data);
+        preorder(ptr->Left);
+        preorder(ptr->Right);
+    }
+}
+
+int isBST(struct Node *root)
+{
+    static struct Node *prev = NULL;
+    if (root != NULL)
+    {
+        if (!isBST(root->Left))
+        {
+            return 0;
+        }
+        if (prev != NULL && root->data <= prev->data)
+        {
+            return 0;
+        }
+        prev = root;
+        return isBST(root->Right);
+    }
+    else
+    {
+        return 1;
+    }
+}
 
 struct Node *search(struct Node *ptr, int key)
 {
@@ -71,7 +111,16 @@ int main()
 
     c->Left = NULL;
     c->Right = f;
+    printf("in order");
     inorder(a);
+    printf("\n");
+
+    printf("post order");
+    PostOrder(a);
+    printf("\n");
+
+    printf("preorder");
+    preorder(a);
     printf("\n");
 
     struct Node *key = search(a, 202);
@@ -83,5 +132,8 @@ int main()
     {
         printf("key not found");
     }
+
+    printf("\n");
+    printf("IS BST:%d", isBST(a));
     return 0;
 }
