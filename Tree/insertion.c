@@ -45,6 +45,8 @@ void insertion(struct Node *ptr, int data)
         prev->right = node;
     }
 }
+
+
 void preorder(struct Node *ptr)
 {
     if (ptr != NULL)
