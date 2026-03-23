@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/sd475/OneDrive/Desktop/DSA/ARRAY",
-      "program": "c:/Users/sd475/OneDrive/Desktop/DSA/ARRAY/build/Debug/outDebug",
+      "cwd": "c:/Users/sd475/OneDrive/Desktop/DSA/ALgorithm",
+      "program": "c:/Users/sd475/OneDrive/Desktop/DSA/ALgorithm/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
