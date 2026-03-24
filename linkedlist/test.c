@@ -1,3 +1,4 @@
+// test
 #include<stdio.h>
 #include<stdlib.h>
 struct Node{
@@ -5,12 +6,14 @@ struct Node{
     struct Node * next;
 };
 
+
 void display(struct Node * head){
     while(head!=NULL){
         printf(" %d ",head->data);
         head=head->next;
     }
 }
+
 
 struct Node * insertAtfirst(struct Node * head, int data){
     struct Node * ptr = (struct Node*)malloc(sizeof(struct Node));
