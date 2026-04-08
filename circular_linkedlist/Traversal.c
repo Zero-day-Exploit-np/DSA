@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 struct Node
 {
     int data;
@@ -9,21 +10,18 @@ struct Node
 void display(struct Node *head)
 {
     struct Node *ptr = head;
+
     do
     {
-        printf(" %d ", ptr->data);
+        printf("%d ", ptr->data);
         ptr = ptr->next;
     } while (ptr != head);
 }
 
-
-
 int main()
 {
-    struct Node *head;
-    struct Node *a;
-    struct Node *b;
-    struct Node *c;
+    struct Node *head, *a, *b, *c;
+
     head = (struct Node *)malloc(sizeof(struct Node));
     a = (struct Node *)malloc(sizeof(struct Node));
     b = (struct Node *)malloc(sizeof(struct Node));
@@ -41,6 +39,7 @@ int main()
     c->data = 4;
     c->next = head;
 
+    printf("Circular Linked List Elements are:\n");
     display(head);
 
     return 0;
